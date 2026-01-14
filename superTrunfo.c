@@ -37,6 +37,7 @@ int main() {
     printf("Digite o numero de pontos turisticos: ");
     scanf("%d", &numeroDePontosTuristicos1);
 
+    superPoder1 = (double)((double)populacao1 + area1 + pib1 + (double)numeroDePontosTuristicos1 + pibPerCapita1)/densidadePopulacional1;
 
     char estado2;
     char codigoDaCarta2[4];
@@ -71,6 +72,7 @@ int main() {
     printf("Digite o numero de pontos turisticos: ");
     scanf("%d", &numeroDePontosTuristicos2);
 
+    superPoder2 = (double)((double)populacao2 + area2 + pib2 + (double)numeroDePontosTuristicos2 + pibPerCapita2)/densidadePopulacional2;
 
     printf("\nDados da Carta 1:\n");
     printf("Estado: %c\n", estado1);
@@ -94,6 +96,15 @@ int main() {
     printf("Numero de Pontos Turisticos: %d\n", numeroDePontosTuristicos2);
     printf("Densidade Populacional: %.2f Hab/km²\n", (float)populacao2 / area2);
     printf("PIB per Capita: %.2f reais\n", pib2 / populacao2);
+
+    printf("\nComparacao de Cartas:\n");
+    printf("Populacao: Carta %s venceu\n", (populacao1 > populacao2) ? codigoDaCarta1 : (populacao1 < populacao2) ? codigoDaCarta2 : "Empate");
+    printf("Area: Carta %s venceu\n", (area1 > area2) ? codigoDaCarta1 : (area1 < area2) ? codigoDaCarta2 : "Empate");
+    printf("PIB: Carta %s venceu\n", (pib1 > pib2) ? codigoDaCarta1 : (pib1 < pib2) ? codigoDaCarta2 : "Empate");
+    printf("Numero de Pontos Turisticos: Carta %s venceu\n", (numeroDePontosTuristicos1 > numeroDePontosTuristicos2) ? codigoDaCarta1 : (numeroDePontosTuristicos1 < numeroDePontosTuristicos2) ? codigoDaCarta2 : "Empate");
+    printf("Super Poder: Carta %s venceu\n", (superPoder1 > superPoder2) ? codigoDaCarta1 : (superPoder1 < superPoder2) ? codigoDaCarta2 : "Empate");
+    printf("Densidade Populacional: Carta %s venceu\n", ((float)populacao1 / area1 > (float)populacao2 / area2) ? codigoDaCarta2 : ((float)populacao1 / area1 < (float)populacao2 / area2) ? codigoDaCarta1 : "Empate");
+    printf("PIB per Capita: Carta %s venceu\n", (pib1 / populacao1 > pib2 / populacao2) ? codigoDaCarta1 : (pib1 / populacao1 < pib2 / populacao2) ? codigoDaCarta2 : "Empate");
 
     return 0;
 
